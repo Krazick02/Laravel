@@ -16,14 +16,17 @@
     </style>
 </head>
 <body>
-    <!-- header-->
-    <!-- nav-->
-    @include('layouts.partials.header')
-    @yield('content')
-    <!-- footer-->
-    @include('layouts.partials.footer')
-    <!-- script-->
+    <div class="container">
 
+        <!-- header-->
+        <!-- nav-->
+        @include('layouts.partials.header')
+        @yield('content')
+        <!-- footer-->
+        @include('layouts.partials.footer')
+        <!-- script-->
+
+    </div>
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
