@@ -42,4 +42,10 @@ class Curso extends Model
     use HasFactory;
     //esta linea de codigo permite cambia la tabla a la que se quiere relacionar el modelo
     //----protected $table= "users";-------
+
+    //esta linea de codigo puede decir que campos quiere evaluar para permitir la asignacion masiva
+    //protected $fillable=['name','description','category'];
+
+    //esta linea descargta campos para permitir la asignacion masiva
+    protected $guarded=['status'];
 }
