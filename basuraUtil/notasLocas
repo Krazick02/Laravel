@@ -22,3 +22,6 @@ $curso=Curso::select('name as title')->take(8)->get()
 podemos condicionar los resultados
 
 $curso=Curso::where('id','>',45)->take(8)->get()
+
+instalacion de tailwin en mac
+https://www.youtube.com/watch?v=s1nAHCfyUUs

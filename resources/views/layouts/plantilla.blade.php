@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <!-- favicon-->
     <!-- estilos-->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         .active{
             color: red;
@@ -23,5 +24,6 @@
     @include('layouts.partials.footer')
     <!-- script-->
 
+    <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

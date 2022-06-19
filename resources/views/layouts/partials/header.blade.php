@@ -1,5 +1,5 @@
 <header>
-    <h1>Crazy Courses</h1>
+    <h1 class="bg-red">Crazy Courses</h1>
     <nav>
         <ul>
             <li><a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' : ''}}">Home</a>
