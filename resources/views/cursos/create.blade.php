@@ -21,7 +21,7 @@
     <br>
     <label for="">
         Description:
-        <textarea name="description" id="" rows="10" value="{{old('description')}}"></textarea>
+        <textarea name="description" id="" rows="10" >{{old('description')}}</textarea>
     </label>
     @error('description')
         <br>

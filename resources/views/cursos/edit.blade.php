@@ -13,7 +13,7 @@
 
     <label for="">
         Name:
-        <input name="name" type="text" value="{{$curso->name}}" value="{{old('name')}}">
+        <input name="name" type="text" value="{{$curso->name}}" value="{{old('name',$curso->name)}}">
     </label>
     <br>
     @error('name')
@@ -23,7 +23,7 @@
     @enderror
     <label for="">
         Description:
-        <textarea name="description" id="" rows="10" value="{{old('description')}}">{{$curso->description}}</textarea>
+        <textarea name="description" id="" rows="10">{{old('description',$curso->description)}}</textarea>
     </label>
     <br>
     @error('description')
@@ -33,7 +33,7 @@
     @enderror
     <label for="">
         Category:
-        <input type="text" name="category" value="{{$curso->category}}" value="{{old('category')}}">
+        <input type="text" name="category" value="{{$curso->category}}" value="{{old('category',$curso->category)}}">
     </label>
     <br>
     @error('category')
