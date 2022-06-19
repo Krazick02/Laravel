@@ -1,0 +1,24 @@
+Usando tinker podemos:
+crear objetos
+
+Nos permite traer un objet y restringirlo segun lo que queramos
+la funcion get hace que tengamos la coleccion
+
+$curso=Curso::where('category','Diseño web')->get()
+
+
+tambien podemos obtener datos especificos
+
+$curso=Curso::select('name')->get()
+
+tambien podemos obtener datos especificos cambiando el nombre de columnas
+
+$curso=Curso::select('name as title')->get()
+
+Podemos limitar los resultados
+
+$curso=Curso::select('name as title')->take(8)->get()
+
+podemos condicionar los resultados
+
+$curso=Curso::where('id','>',45)->take(8)->get()
