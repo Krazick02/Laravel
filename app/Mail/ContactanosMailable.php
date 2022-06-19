@@ -19,10 +19,9 @@ class ContactanosMailable extends Mailable
 
 
      public $subject="Contact Information";
-
-    public function __construct()
-    {
-        //
+     public $contact;
+    public function __construct($contacto){
+        $this->contact=$contacto;
     }
 
     /**

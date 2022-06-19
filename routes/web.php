@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
@@ -47,8 +48,7 @@ Route::resource('cursos',CursoController::class);
 Route::view('us','us')->name('us');
 
 //esta ruta hace que envienmos correos
-Route::get('contactUs',function(){
-    $correo = new ContactanosMailable;
-    Mail::to('elangelcotaymas@gmail.com')->send($correo);
-    return "Mensage enviado";
-});
+Route::get('contactUs',[ContactUsController::class,'index'])->name('contactUs.index');
+
+//esta informacion mandara el correo o informacion del correo
+Route::post('contactUs',[ContactUsController::class,'store'])->name('contactUs.store');
