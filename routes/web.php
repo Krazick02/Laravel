@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
+use Symfony\Component\Routing\Router;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +45,10 @@ Route::resource('cursos',CursoController::class);
 //Route::resource('asignaturas',CursoController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
 
 Route::view('us','us')->name('us');
+
+//esta ruta hace que envienmos correos
+Route::get('contactUs',function(){
+    $correo = new ContactanosMailable;
+    Mail::to('elangelcotaymas@gmail.com')->send($correo);
+    return "Mensage enviado";
+});
