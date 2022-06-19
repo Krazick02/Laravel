@@ -15,7 +15,7 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/',HomeController::class);
+Route::get('/',HomeController::class)->name('home');
 
 //Rutas con un grupo
 // Route::controller(CursoController::class)->group(function(){
@@ -36,7 +36,9 @@ Route::get('/',HomeController::class);
 
 
 //Asi definir las rutas con el metodo resource, necesita ser elaborado con las convenciones
-//Route::resource('cursos',CursoController::class);
+Route::resource('cursos',CursoController::class);
 
 //Asi se pueden modificar el nombre de la ruta, pero sin modificar los nombres en las rutas ni los parametros
-Route::resource('asignaturas',CursoController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
+//Route::resource('asignaturas',CursoController::class)->parameters(['asignaturas'=>'curso'])->names('cursos');
+
+Route::view('us','us')->name('us');

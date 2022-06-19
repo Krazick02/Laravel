@@ -48,4 +48,12 @@ class Curso extends Model
 
     //esta linea descargta campos para permitir la asignacion masiva
     protected $guarded=['status'];
+
+
+    //Esta funcion es pra editar la forma en que se recupera un elemento de la base de datos y se muestra, para lo de las urls amigables
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }
