@@ -10,21 +10,37 @@
     @method('put');
     @csrf
 
+
     <label for="">
         Name:
-        <input name="name" type="text" value="{{$curso->name}}">
+        <input name="name" type="text" value="{{$curso->name}}" value="{{old('name')}}">
     </label>
     <br>
+    @error('name')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <label for="">
         Description:
-        <textarea name="description" id="" rows="10">{{$curso->description}}</textarea>
+        <textarea name="description" id="" rows="10" value="{{old('description')}}">{{$curso->description}}</textarea>
     </label>
     <br>
+    @error('description')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <label for="">
         Category:
-        <input type="text" name="category" value="{{$curso->category}}">
+        <input type="text" name="category" value="{{$curso->category}}" value="{{old('category')}}">
     </label>
     <br>
+    @error('category')
+        <br>
+        <small>*{{$message}}</small>
+        <br>
+    @enderror
     <button type="submit">Update</button>
 </form>
 
