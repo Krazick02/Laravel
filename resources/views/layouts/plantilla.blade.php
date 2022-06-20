@@ -15,7 +15,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-">
     <div class="container">
 
         <!-- header-->
