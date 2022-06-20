@@ -52,3 +52,13 @@ Route::get('contactUs',[ContactUsController::class,'index'])->name('contactUs.in
 
 //esta informacion mandara el correo o informacion del correo
 Route::post('contactUs',[ContactUsController::class,'store'])->name('contactUs.store');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

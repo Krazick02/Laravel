@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        //              nombre              
         Schema::create('users', function (Blueprint $table) {
-            $table->id();// entero auto incrementable
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();// el atributo nullable se le debe asignar a todo los campos que puedan quedar vacios
-            //TIME STAMP guarda fechas, sirve para verificar los correos electronicos
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();// sirve para recordar la contraseña
-            $table->timestamps();// esta guarda las actualizaciones o cambios created_at update_at
+            $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
+            $table->timestamps();
         });
     }
 
